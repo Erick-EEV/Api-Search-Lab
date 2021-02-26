@@ -15,7 +15,7 @@ const searchReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_SEARCH_TERM: {
       const { searchKeyword } = action;
-      console.log(state)
+      console.log(state);
       return {
         ...state,
         searchTerms: [...state.searchTerms, searchKeyword],
