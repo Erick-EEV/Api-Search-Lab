@@ -9,7 +9,7 @@ const History = () => {
         <div key={index}>
           <ul>
             <li>
-              Past Search: {index + 1} {searchTerm}
+              Past Searches Numbered: {index + 1} {searchTerm}
             </li>
           </ul>
         </div>
