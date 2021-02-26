@@ -3,7 +3,7 @@ import * as actionTypes from "./actionTypes";
 const initialState = {
   searchTerms: [],
   currentSearchTerm: "",
-  searchResultsArray: []
+  searchResultsArray: [],
 };
 
 const searchReducer = (state = initialState, action) => {
@@ -18,12 +18,12 @@ const searchReducer = (state = initialState, action) => {
       };
     }
     case actionTypes.ADD_SEARCH_RESULTS: {
-        console.log(state, action);
-        const { searchResults } = action;
-        return {
-            ...state,
-            searchResultsArray: searchResults
-        }
+      console.log(state, action);
+      const { searchResults } = action;
+      return {
+        ...state,
+        searchResultsArray: searchResults,
+      };
     }
   }
   return state;

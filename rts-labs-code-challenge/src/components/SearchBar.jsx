@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addSearchTerm, addSearchResults } from "../redux/actionTypes";
 
-
 const SearchBar = () => {
-    // save result.hits in redux store then map and render
   const [searchKeyword, setSearchKeyword] = useState("");
 
   const dispatch = useDispatch();
@@ -18,8 +16,8 @@ const SearchBar = () => {
     event.preventDefault();
     dispatch(addSearchTerm(searchKeyword));
     fetch(`http://hn.algolia.com/api/v1/search?query=${searchKeyword}`)
-    .then(resp => resp.json())
-    .then(result => dispatch(addSearchResults(result.hits)))
+      .then((resp) => resp.json())
+      .then((result) => dispatch(addSearchResults(result.hits)));
   };
 
   return (

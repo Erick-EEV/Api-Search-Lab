@@ -6,5 +6,5 @@ export const addSearchTerm = (search) => {
 };
 
 export const addSearchResults = (results) => {
-    return {type: ADD_SEARCH_RESULTS, searchResults: results}
-}
+  return { type: ADD_SEARCH_RESULTS, searchResults: results };
+};
