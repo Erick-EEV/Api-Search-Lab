@@ -1,12 +1,12 @@
-import './App.css';
-import SearchBar from "./features/SearchBar";
-
+import "./App.css";
+import SearchBar from "./components/SearchBar";
+import Results from "./components/Results"
 
 function App() {
-
   return (
     <div className="App">
-    <SearchBar />
+      <SearchBar />
+      <Results />
     </div>
   );
 }
