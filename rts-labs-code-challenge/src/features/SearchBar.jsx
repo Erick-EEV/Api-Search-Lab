@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'
+import { addSearchTerm } from '../redux/actionTypes';
 
 const SearchBar = (props) => {
 
+    const [searchKeyword, setSearchKeyword] = useState("")
+    
+    const dispatch = useDispatch()
+    
     const handleOnChange = (event) => {
         event.preventDefault()
-        props.store(event.target.value)
-        // On Change update and save input to redux state
+        setSearchKeyword(event.target.value)
     }
-
+    
     const search = (event) => {
-        //retrieve redux state and use this to make a fetch request to the api to retrieve result
-        //Then update and save a seperate redux state with the result that was found
         event.preventDefault()
-
-        console.log(event.target.value)
+        dispatch(addSearchTerm(searchKeyword))
+        console.log("hit")
     }
 
     return (
